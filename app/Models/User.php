@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role', // Tambahkan kolom role
     ];
 
     /**
@@ -44,7 +45,7 @@ class User extends Authenticatable
     ];
 
 
-    
+
     // Helper methods untuk cek role
     public function isAdmin()
     {

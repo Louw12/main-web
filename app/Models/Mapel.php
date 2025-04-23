@@ -10,5 +10,6 @@ class Mapel extends Model
     use HasFactory;
     protected $fillable = [
         'nama_mapel',
+        'kode_mapel',
     ];
 }

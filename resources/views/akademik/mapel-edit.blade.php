@@ -10,6 +10,10 @@
             <label for="nama_mapel" class="form-label">Nama Mata Pelajaran</label>
             <input type="text" name="nama_mapel" class="form-control" value="{{ $mapel->nama_mapel }}" required>
         </div>
+        <div class="mb-3">
+            <label for="kode_mapel" class="form-label">Kode Mapel</label>
+            <input type="text" name="kode_mapel" class="form-control" value="{{ $mapel->kode_mapel }}" required>
+            <br>
         <button type="submit" class="btn btn-primary">Perbarui</button>
     </form>
 </div>

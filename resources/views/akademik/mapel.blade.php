@@ -9,7 +9,8 @@
             <tr>
                 <th>#</th>
                 <th>Nama Mata Pelajaran</th>
-                <th>Aksi</th>
+                <th>Kode Mapel</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +18,7 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $mapel->nama_mapel }}</td>
+                    <td>{{ $mapel->kode_mapel }}</td>
                     <td>
                         <a href="{{ route('mapel.edit', $mapel->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('mapel.destroy', $mapel->id) }}" method="POST" style="display:inline;">

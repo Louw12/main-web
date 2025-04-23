@@ -22,10 +22,12 @@ class MapelController extends Controller
     {
         $request->validate([
             'nama_mapel' => 'required|string|max:255',
+            'kode_mapel' => 'required|string|max:255',
         ]);
 
         Mapel::create([
             'nama_mapel' => $request->nama_mapel,
+            'kode_mapel' => $request->kode_mapel,
         ]);
 
         return redirect()->route('mapel.index')->with('success', 'Mata Pelajaran berhasil ditambahkan.');
@@ -40,10 +42,12 @@ class MapelController extends Controller
     {
         $request->validate([
             'nama_mapel' => 'required|string|max:255',
+            'kode_mapel' => 'required|string|max:255',
         ]);
 
         $mapel->update([
             'nama_mapel' => $request->nama_mapel,
+            'kode_mapel' => $request->kode_mapel,
         ]);
 
         return redirect()->route('mapel.index')->with('success', 'Mata Pelajaran berhasil diperbarui.');

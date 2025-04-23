@@ -112,7 +112,7 @@
 
     .gap-2 {
         gap: 0.5rem;
-    }
+    }    
 
     .modal-content {
         animation: fadeIn 0.2s ease-in-out;

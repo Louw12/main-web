@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Akademik\AkademikController;
+use App\Http\Controllers\Akademik\MapelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +23,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-  // Routes khusus admin
-  Route::middleware(['role:admin'])->prefix('admin')->group(function () {
+// Routes khusus admin
+Route::middleware(['role:admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::resource('users', UserController::class);
     // Route admin lainnya
@@ -32,8 +32,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Routes khusus akademik
 Route::middleware(['role:akademik'])->prefix('akademik')->group(function () {
-    Route::get('/dashboard', [AkademikController::class, 'dashboard'])->name('akademik.dashboard');
-    // Route akademik lainnya
+    // Route to display the main page for the academic section
+    Route::get('/', [AkademikController::class, 'index'])->name('akademik.index');
+    Route::resource('mapel', MapelController::class);
+
+    
 });
 
 // Routes khusus BK

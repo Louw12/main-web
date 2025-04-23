@@ -16,8 +16,11 @@
         <div class="mb-3">
             <label for="role" class="form-label">Role</label>
             <select name="role" class="form-control">
-                <option value="user">User</option>
                 <option value="admin">Admin</option>
+                <option value="guru">Guru</option>
+                <option value="siswa">Siswa</option>
+                <option value="akademik">Akademik</option>
+                <option value="bk">BK</option>
             </select>
         </div>
         <div class="mb-3">

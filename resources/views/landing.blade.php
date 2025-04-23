@@ -4,30 +4,31 @@
 
 @push('styles')
 <style>
-    /* Enhanced carousel styling with reduced width */
+    /* Enhanced carousel styling with more professional dimensions */
     #headerCarousel {
-        max-width: 900px; /* Reduced from 1140px */
-        margin: 0 auto 3rem;
-        border-radius: 12px;
+        max-width: 70%;
+        margin: 0 auto 2rem;
+        border-radius: 8px;
         overflow: hidden;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     }
     
     .carousel-item {
-        height: 450px; /* Slightly reduced height to match the narrower width */
+        height: auto; /* Ubah dari fixed height ke auto */
+        aspect-ratio: 16 / 5; 
     }
     
     .carousel-item img {
         object-fit: cover;
         height: 100%;
         width: 100%;
-        filter: brightness(65%);
+        filter: brightness(55%);
+        max-height: 400px;
     }
     
     .carousel-caption {
         background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-        border-radius: 0;
-        padding: 2rem;
+        padding: 1.5rem;
         bottom: 0;
         left: 0;
         right: 0;
@@ -35,68 +36,74 @@
     }
     
     .carousel-caption h5 {
-        font-size: 2rem; /* Slightly reduced from 2.2rem */
-        font-weight: 700;
-        margin-bottom: 0.8rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #ffffff;
     }
     
     .carousel-caption p {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
         max-width: 90%;
+        line-height: 1.4;
+        color: #f0f0f0;
     }
     
     .carousel-indicators {
-        bottom: 20px;
+        bottom: 10px;
     }
     
     .carousel-indicators button {
-        width: 12px;
-        height: 12px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
-        margin: 0 6px;
+        margin: 0 4px;
     }
     
-    /* Container for the carousel to control width */
+    /* Container for the carousel with professional width */
     .carousel-container {
-        width: 80%; /* This makes the carousel take up only 80% of the parent width */
-        margin: 0 auto;
+        width: 75%;
+        max-width: 1200px;
+        margin: 1.5rem auto;
     }
     
-    /* Enhanced cards styling */
+    /* Enhanced cards styling with professional look */
     .feature-cards {
-        margin-bottom: 4rem;
-        max-width: 1000px; /* Slightly narrower than default container */
+        margin-bottom: 3rem;
+        max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
+        padding: 0 15px;
     }
     
     .feature-card {
         height: 100%;
         border: none;
-        border-radius: 12px;
-        transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 6px;
+        transition: transform 0.2s, box-shadow 0.2s;
         overflow: hidden;
+        background-color: #fff;
     }
     
     .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
     
     .feature-card .card-body {
-        padding: 2rem;
-        min-height: 220px;
+        padding: 1.75rem;
+        min-height: 200px;
         display: flex;
         flex-direction: column;
     }
     
     .feature-card .card-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 600;
-        margin-bottom: 1rem;
-        color: #2c3e50;
+        margin-bottom: 0.75rem;
+        color: #0a2550;
         position: relative;
-        padding-bottom: 0.8rem;
+        padding-bottom: 0.6rem;
     }
     
     .feature-card .card-title:after {
@@ -104,80 +111,131 @@
         position: absolute;
         left: 0;
         bottom: 0;
-        width: 50px;
-        height: 3px;
-        background-color: #3498db;
+        width: 40px;
+        height: 2px;
+        background-color: #4d96ff;
     }
     
     .feature-card .card-text {
-        color: #5d6778;
-        font-size: 1rem;
-        line-height: 1.6;
+        color: #475569;
+        font-size: 0.9rem;
+        line-height: 1.5;
         flex-grow: 1;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
     }
     
     .feature-card .btn {
         align-self: flex-start;
-        padding: 0.6rem 1.5rem;
+        padding: 0.5rem 1.25rem;
         font-weight: 500;
-        border-radius: 30px;
-        text-transform: uppercase;
+        border-radius: 4px;
         font-size: 0.85rem;
-        letter-spacing: 0.5px;
-        transition: all 0.3s;
+        letter-spacing: 0.3px;
+        transition: all 0.2s;
     }
     
     .feature-card .btn-primary {
-        background-color: #3498db;
-        border-color: #3498db;
+        background-color: #4d96ff;
+        border-color: #4d96ff;
     }
     
     .feature-card .btn-primary:hover {
-        background-color: #2980b9;
-        border-color: #2980b9;
+        background-color: #0a2550;
+        border-color: #0a2550;
     }
     
     .feature-card .card-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        color: #3498db;
+        font-size: 1.8rem;
+        margin-bottom: 1.25rem;
+        color: #4d96ff;
+    }
+    
+    /* Section title for feature cards */
+    .section-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        position: relative;
+        padding-bottom: 0.75rem;
+        font-weight: 600;
+        color: #0a2550;
+        font-size: 1.75rem;
+    }
+    
+    .section-title:after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background-color: #4d96ff;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     /* Responsive adjustments */
-    @media (max-width: 992px) {
+    @media (max-width: 768px) {
         .carousel-container {
-            width: 90%;
+            width: 95%;
         }
         
-        #headerCarousel {
-            max-width: 100%;
+        .carousel-item {
+            height: 250px;
         }
     }
     
     @media (max-width: 768px) {
         .carousel-item {
-            height: 350px;
+            height: 220px;
         }
         
         .carousel-caption {
-            padding: 1.5rem;
+            padding: 1rem;
         }
         
         .carousel-caption h5 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         
-        .carousel-container {
-            width: 95%;
+        .carousel-caption p {
+            font-size: 0.85rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .carousel-item {
+            height: 200px;
+        }
+    }
+    
+    /* Ensure compatibility with main layout theme colors */
+    .animate__animated {
+        animation-duration: 0.8s;
+    }
+    
+    .animate__fadeInUp {
+        animation-name: fadeInUp;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translate3d(0, 30px, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
         }
     }
 </style>
 @endpush
 
-<!-- Enhanced Carousel Section with Narrower Width -->
+<!-- Professional Carousel Section with Optimized Height -->
 <section class="carousel-container">
-    <div id="headerCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="headerCarousel" class="carousel slide" data-bs-ride="carousel" style="aspect-ratio: 16 / 7;">
         <!-- Indicators -->
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -188,26 +246,26 @@
         <!-- Slides -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{asset('images/Fotogedung.PNG')}}" class="d-block w-100" alt="Gedung Sekolah">
+                <img src="{{asset('images/BG.PNG')}}" class="d-block w-100" style="height: 100%;" alt="Gedung Sekolah">
                 <div class="carousel-caption d-md-block">
-                    <h5>Selamat Datang di Sekolah Kami</h5>
-                    <p>Menyediakan pendidikan berkualitas dengan standar akademik tinggi dalam lingkungan yang inspiratif.</p>
+                    <h5>Selamat Datang di MAN 2 Kota Kediri</h5>
+                    <p>Menyediakan pendidikan berkualitas tinggi dalam lingkungan yang inspiratif.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://source.unsplash.com/1200x600/?student" class="d-block w-100" alt="Prestasi Siswa">
+                <img src="{{asset('images/BG.PNG')}}" class="d-block w-100" style="height: 100%;" alt="Prestasi Siswa">
                 <div class="carousel-caption d-md-block">
                     <h5>Prestasi Gemilang Siswa</h5>
-                    <p>Siswa kami telah meraih berbagai penghargaan bergengsi di tingkat regional dan nasional.</p>
+                    <p>Siswa kami meraih berbagai penghargaan bergengsi di tingkat regional dan nasional.</p>
                 </div>
             </div>
-            <div class="carousel-item">
+            <!-- <div class="carousel-item">
                 <img src="https://source.unsplash.com/1200x600/?classroom" class="d-block w-100" alt="Fasilitas Sekolah">
                 <div class="carousel-caption d-md-block">
                     <h5>Fasilitas Modern</h5>
-                    <p>Dilengkapi dengan sarana pembelajaran mutakhir untuk mendukung proses belajar mengajar yang efektif.</p>
+                    <p>Dilengkapi sarana pembelajaran mutakhir untuk proses belajar mengajar yang efektif.</p>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- Controls -->
@@ -221,24 +279,26 @@
         </button>
     </div>
 </section>
-
-<!-- Enhanced Cards Section -->
-<section class="container feature-cards">
+<br>
+<!-- Professional Feature Cards Section -->
+<section class="feature-cards">
+    <h2 class="section-title">Fitur Unggulan</h2>
+    <br>
     <div class="row g-4">
         <div class="col-md-4">
-            <div class="card feature-card shadow">
+            <div class="card feature-card shadow-sm">
                 <div class="card-body">
                     <div class="card-icon">
                         <i class="fas fa-info-circle"></i>
                     </div>
                     <h5 class="card-title">Informasi Sekolah</h5>
-                    <p class="card-text">Akses berbagai informasi penting terkait kegiatan, kebijakan, dan program unggulan sekolah kami.</p>
+                    <p class="card-text">Akses berbagai informasi penting terkait kegiatan, kebijakan, dan program unggulan MAN 2 Kota Kediri.</p>
                     <a href="#" class="btn btn-primary">Selengkapnya</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card feature-card shadow">
+            <div class="card feature-card shadow-sm">
                 <div class="card-body">
                     <div class="card-icon">
                         <i class="fas fa-trophy"></i>
@@ -250,12 +310,12 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card feature-card shadow">
+            <div class="card feature-card shadow-sm">
                 <div class="card-body">
                     <div class="card-icon">
                         <i class="fas fa-user-graduate"></i>
                     </div>
-                    <h5 class="card-title">Pendaftaran</h5>
+                    <h5 class="card-title">PPDBM</h5>
                     <p class="card-text">Informasi lengkap mengenai proses pendaftaran, persyaratan, dan jadwal penerimaan siswa baru.</p>
                     <a href="#" class="btn btn-primary">Daftar Sekarang</a>
                 </div>
@@ -271,30 +331,38 @@
     document.addEventListener('DOMContentLoaded', function () {
         // Initialize carousel with enhanced options
         const carousel = document.querySelector('#headerCarousel');
-        new bootstrap.Carousel(carousel, {
-            interval: 6000,
-            pause: 'hover',
-            wrap: true,
-            keyboard: true
-        });
-        
-        // Add animation to cards on scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
-                    observer.unobserve(entry.target);
-                }
+        if (carousel) {
+            new bootstrap.Carousel(carousel, {
+                interval: 5000,
+                pause: 'hover',
+                wrap: true,
+                keyboard: true
             });
-        }, observerOptions);
+        }
         
-        document.querySelectorAll('.feature-card').forEach(card => {
-            observer.observe(card);
-        });
+        // Add subtle animation to cards on scroll
+        if ('IntersectionObserver' in window) {
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.feature-card').forEach((card, index) => {
+                // Add slight delay between each card animation
+                setTimeout(() => {
+                    observer.observe(card);
+                }, index * 150);
+            });
+        }
     });
 </script>
 @endpush

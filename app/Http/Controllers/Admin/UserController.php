@@ -23,6 +23,8 @@ class UserController extends Controller
      */
     public function create()
     {
+
+
         return view('admin.create-user');
     }
 
@@ -61,6 +63,9 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
+        $user = User::findOrFail($id); // Ambil data user berdasarkan ID
+        return view('admin.edit-user', compact('user')); // Kirim data user ke view
+
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $user->id,
@@ -87,6 +92,7 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
+        $user = User::findOrFail($id); 
         $user->delete();
         return redirect()->route('users.index')->with('success', 'User deleted successfully.');
     }

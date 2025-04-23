@@ -44,11 +44,11 @@
 
                             <div class="col-md-6">
                                 <select id="role" class="form-control @error('role') is-invalid @enderror" name="role" required>
-                                    <option value="">-- Pilih Role --</option>
+                                    <!-- <option value="">-- Pilih Role --</option>
                                     <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
                                     <option value="akademik" {{ old('role') == 'akademik' ? 'selected' : '' }}>Akademik</option>
                                     <option value="bk" {{ old('role') == 'bk' ? 'selected' : '' }}>BK</option>
-                                    <option value="guru" {{ old('role') == 'guru' ? 'selected' : '' }}>Guru</option>
+                                    <option value="guru" {{ old('role') == 'guru' ? 'selected' : '' }}>Guru</option> -->
                                     <option value="siswa" {{ old('role') == 'siswa' ? 'selected' : '' }}>Siswa</option>
                                 </select>
 

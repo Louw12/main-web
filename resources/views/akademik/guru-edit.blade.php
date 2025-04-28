@@ -19,9 +19,6 @@
             <select name="mapel_id" class="form-control" required>
                 <option value="">-- Pilih Mapel --</option>
                 @foreach ($mapels as $mapel)
-                    <!-- <option value="{{ $mapel->id }}" {{ $guru->mapel_id == $mapel->id ? 'selected' : '' }}>
-                        {{ $mapel->nama_mapel }}
-                    </option> -->
                 <option value="{{ $mapel->id }}" {{ $guru->mapel_id == $mapel->id ? 'selected' : '' }}>
                     {{ $mapel->nama_mapel }} ({{ $mapel->kode_mapel }})
                 </option>

@@ -17,7 +17,8 @@
                         <tr>
                             <th class="text-center" style="width: 5%;">#</th>
                             <th style="width: 30%;">Name</th>
-                            <th style="width: 40%;">Email</th>
+                            <th style="width: 30%;">Email</th>
+                            <th tyle="width: 25%;">Role</th>
                             <th class="text-center" style="width: 25%;">Actions</th>
                         </tr>
                     </thead>
@@ -27,6 +28,7 @@
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
+                                <td >{{ $user->role }}</td>
                                 <td class="text-center">
                                     <div class="d-flex justify-content-center gap-2">
                                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-outline-secondary btn-sm">

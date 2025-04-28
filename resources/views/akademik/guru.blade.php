@@ -11,6 +11,7 @@
                 <th>Nama Guru</th>
                 <th>Kode Guru</th>
                 <th>Mapel</th>
+                <!-- <th>Verived</th> -->
                 <th>Action</th>
             </tr>
         </thead>
@@ -21,6 +22,7 @@
                     <td>{{ $guru->nama_guru }}</td>
                     <td>{{ $guru->kode_guru }}</td>
                     <!-- <td>{{ $guru->mapel->nama_mapel ?? '-' }}</td> -->
+                    <!-- <td></td> -->
                     <td>{{ $guru->mapel->kode_mapel ?? '-' }} - {{ $guru->mapel->nama_mapel ?? '-' }}</td>
                     <td>
                         <a href="{{ route('guru.edit', $guru->id) }}" class="btn btn-warning btn-sm">Edit</a>

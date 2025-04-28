@@ -6,7 +6,7 @@
 <style>
     /* Enhanced carousel styling with more professional dimensions */
     #headerCarousel {
-        max-width: 70%;
+        max-width: 20%;
         margin: 0 auto 2rem;
         border-radius: 8px;
         overflow: hidden;
@@ -20,8 +20,8 @@
     
     .carousel-item img {
         object-fit: cover;
-        height: 100%;
-        width: 100%;
+        height: 10%;
+        width: 10%;
         filter: brightness(55%);
         max-height: 400px;
     }
@@ -246,14 +246,14 @@
         <!-- Slides -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{asset('images/BG.PNG')}}" class="d-block w-100" style="height: 100%;" alt="Gedung Sekolah">
+                <img src="{{asset('images/Fotogedung.PNG')}}" class="d-block w-100" style="height: 50%;" alt="Gedung Sekolah">
                 <div class="carousel-caption d-md-block">
                     <h5>Selamat Datang di MAN 2 Kota Kediri</h5>
                     <p>Menyediakan pendidikan berkualitas tinggi dalam lingkungan yang inspiratif.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{asset('images/BG.PNG')}}" class="d-block w-100" style="height: 100%;" alt="Prestasi Siswa">
+                <img src="{{asset('images/BG.PNG')}}" class="d-block w-100" style="height: 50%;" alt="Prestasi Siswa">
                 <div class="carousel-caption d-md-block">
                     <h5>Prestasi Gemilang Siswa</h5>
                     <p>Siswa kami meraih berbagai penghargaan bergengsi di tingkat regional dan nasional.</p>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Akademik\AkademikController;
 use App\Http\Controllers\Akademik\MapelController;
+use App\Http\Controllers\Akademik\GuruController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Route::middleware(['role:akademik'])->prefix('akademik')->group(function () {
     // Route to display the main page for the academic section
     Route::get('/', [AkademikController::class, 'index'])->name('akademik.index');
     Route::resource('mapel', MapelController::class);
+    Route::resource('guru', GuruController::class);
 
     
 });

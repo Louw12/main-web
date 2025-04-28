@@ -9,13 +9,13 @@ class MapelController extends Controller
 {
     public function index()
     {
-        $mapels = Mapel::all(); // Ambil semua data mapel
-        return view('akademik.mapel', compact('mapels')); // Tampilkan view index
+        $mapels = Mapel::all(); 
+        return view('akademik.mapel', compact('mapels')); 
     }
 
     public function create()
     {
-        return view('akademik.mapel-create'); // Tampilkan form tambah mapel
+        return view('akademik.mapel-create'); 
     }
 
     public function store(Request $request)

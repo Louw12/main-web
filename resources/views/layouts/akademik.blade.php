@@ -168,7 +168,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{route('guru.index')}}">
                                 <i class="bi bi-person-badge"></i> Teachers
                             </a>
                         </li>

@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Man 2 Kota Kediri</title>
 
-        <!-- Bootstrap 5 CSS -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 
     <style>
         * {
@@ -32,12 +31,11 @@
             background-color: #0a2550;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             padding: 15px 0;
-            position: relative;
+            position: sticky;
             top: 0;
             width: 100%;
             z-index: 1000;
             transition: transform 0.3s ease;
-            /* overflow: hidden; */
         }
         
         .navbar::before {
@@ -67,7 +65,6 @@
             border-radius: 50%;
             animation: float 12s infinite linear;
             filter: blur(2px);
-
         }
         
         .shape1 {
@@ -121,9 +118,9 @@
             transform: translateY(-100%);
         }
         
-        .container {
-            width: 85%;
-            max-width: 1200px;
+        .nav-container {
+            width: 90%;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -138,8 +135,8 @@
         }
         
         .logo img {
-            height: 40px;
-            margin-right: 10px;
+            height: 70px;
+            margin-right: 25px;
         }
         
         .logo-text {
@@ -151,6 +148,7 @@
         .nav-links {
             display: flex;
             list-style: none;
+            margin-bottom: 0;
         }
         
         .nav-links li {
@@ -210,16 +208,206 @@
             transition: all 0.3s ease;
         }
         
-        .content {
-            margin-top: 100px;
-            padding: 20px;
-            text-align: center;
-            flex-grow: 1;
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 30px;
         }
         
-        .content h1 {
-            margin-bottom: 20px;
-            color: #0a2550;
+        .slider {
+            position: relative;
+            width: 100%;
+        }
+        
+        .slide {
+            display: none;
+            width: 100%;
+            position: relative;
+        }
+        
+        .slide.active {
+            display: block;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+        
+        .slide img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0;
+            display: block;
+        }
+        
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff;
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(10, 37, 80, 0.7);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .slide-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+            font-weight: 700;
+        }
+        
+        .slide-content p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        }
+        
+        .btn-slider {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #4d96ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn-slider:hover {
+            background-color: transparent;
+            color: #ffffff;
+            border-color: #4d96ff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(10, 37, 80, 0.7);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slider-btn:hover {
+            background-color: #0a2550;
+        }
+        
+        .prev-btn {
+            left: 20px;
+        }
+        
+        .next-btn {
+            right: 20px;
+        }
+        
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .dot.active {
+            background-color: #4d96ff;
+            transform: scale(1.2);
+        }
+        
+        @media (max-width: 768px) {
+            .slide-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+            
+            .btn-slider {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .slider-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .slide-content h2 {
+                font-size: 1.5rem;
+                margin-bottom: 8px;
+            }
+            
+            .slide-content p {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+            
+            .btn-slider {
+                padding: 6px 16px;
+                font-size: 0.8rem;
+            }
+            
+            .slider-btn {
+                width: 35px;
+                height: 35px;
+            }
+        }
+        
+        .content {
+            flex-grow: 1;
+            padding: 30px 0;
+        }
+        
+        .main-container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
         }
         
         /* Footer Styles */
@@ -231,8 +419,8 @@
         }
         
         .footer-container {
-            width: 85%;
-            max-width: 1200px;
+            width: 90%;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -268,6 +456,48 @@
             color: #b0b0b0;
         }
         
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0a2550;
+            padding: 10px;
+            list-style: none;
+            border-radius: 5px;
+            z-index: 1050;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+        }
+        
+        .dropdown-menu li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            display: block;
+            padding: 8px 15px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dropdown-menu li a:hover {
+            background-color: #1a3a73;
+        }
+        
+        @media (min-width: 769px) {
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+        }
+        
         @media (max-width: 768px) {
             .mobile-toggle {
                 display: block;
@@ -276,7 +506,7 @@
             .nav-links {
                 position: fixed;
                 left: -100%;
-                top: 70px;
+                top: 100px;
                 flex-direction: column;
                 background-color: #0a2550;
                 width: 100%;
@@ -294,10 +524,6 @@
                 margin: 15px 0;
             }
             
-            .nav-links a::after {
-                display: none;
-            }
-            
             .footer-container {
                 flex-direction: column;
             }
@@ -309,69 +535,43 @@
             .footer-links a {
                 margin: 0 10px;
             }
-
-            /* Dropdown menu styles */
-            .dropdown {
-                position: relative; /* Ensure the dropdown is positioned relative to its parent */
-    
-            }
-
+            
             .dropdown-menu {
-                display: none; /* Default: hide dropdown */
-                position: absolute;
-                top: 100%; /* Position below the parent */
-                left: 0;
-                background-color: #0a2550;
-                padding: 10px;
-                list-style: none;
-                border-radius: 5px;
-                z-index: 1050; /* Ensure it is above other elements */
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                display: none;
+                margin-top: 10px;
+                padding: 0;
             }
-
-            .dropdown:hover .dropdown-menu {
-                display: block; /* Show dropdown on hover */
-            }
-
-            .dropdown-menu li a {
-                color: #e0e0e0;
-                text-decoration: none;
-                display: block;
-                padding: 8px 15px;
-                border-radius: 3px;
-                transition: background-color 0.3s ease;
-            }
-
-            .dropdown-menu li a:hover {
-                background-color: #1a3a73;
-            }
-
         }
     </style>
 </head>
 <body>
-    <nav class="navbar" style="z-index: 105;">
+    <div class="scrum">
+    </div>
+    <nav class="navbar">
         <div class="animated-bg">
             <div class="animated-shape shape1"></div>
             <div class="animated-shape shape2"></div>
             <div class="animated-shape shape3"></div>
             <div class="animated-shape shape4"></div>
         </div>
-        <div class="container">
+        <div class="nav-container">
             <div class="logo">
-                <img src="{{ asset('images/logo.webp') }}" alt="Logo" style="height: 70px; margin-right: 25px;">
+                <img src="{{ asset('images/logo.webp') }}" alt="Logo">
                 <div class="logo-text">Man 2 Kota Kediri</div>
             </div>
             
             <ul class="nav-links">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">PPDBM</a></li>
-                <li class="dropdown" style="position: relative; z-index: 106;">
-                    <a href="#" class="dropdown-toggle" style="color: #e0e0e0; text-decoration: none; padding: 10px 0; display: block;">Profile</a>
-                    <ul class="dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; background-color: #0a2550; padding: 10px; list-style: none; border-radius: 5px; z-index: 107; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                        <li><a href="#" style="color: #e0e0e0; text-decoration: none; display: block; padding: 8px 15px; border-radius: 3px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#1a3a73';" onmouseout="this.style.backgroundColor='transparent';">Profile 1</a></li>
-                        <li><a href="#" style="color: #e0e0e0; text-decoration: none; display: block; padding: 8px 15px; border-radius: 3px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#1a3a73';" onmouseout="this.style.backgroundColor='transparent';">Profile 2</a></li>
-                        <li><a href="#" style="color: #e0e0e0; text-decoration: none; display: block; padding: 8px 15px; border-radius: 3px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#1a3a73';" onmouseout="this.style.backgroundColor='transparent';">Profile 3</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Profile</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile 1</a></li>
+                        <li><a href="#">Profile 2</a></li>
+                        <li><a href="#">Profile 3</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Zona Integritas</a></li>
@@ -385,10 +585,16 @@
             </div>
         </div>
     </nav>
-    
-        <div class="content" style="margin-top: 1px; padding: 10px;">
+    <div class="slider-container">
+
+        @yield('slider')
+
+    </div>
+    <div class="content">
+        <div class="main-container">
             @yield('content')
         </div>
+    </div>
     
     <footer>
         <div class="footer-container">
@@ -413,7 +619,6 @@
         
         mobileToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            mobileToggle.classList.toggle('active');
         });
         
         // Hide navbar on scroll down, show on scroll up
@@ -432,7 +637,7 @@
             lastScrollTop = scrollTop;
         });
         
-        // Create additional random floating shapes for more visual interest
+        // Create additional random floating shapes
         const animatedBg = document.querySelector('.animated-bg');
         
         for (let i = 0; i < 8; i++) {
@@ -456,17 +661,89 @@
             
             animatedBg.appendChild(shape);
         }
-        // Dropdown toggle functionality
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdownMenu = document.querySelector('.dropdown-menu');
-
-        dropdownToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            const isHidden = dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '';
-            // dropdownMenu.style.display = isHidden ? 'block' : 'none';
-            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-
-            dropdownMenu.style.zIndex = '9999'
+        
+        // Dropdown toggle functionality for mobile
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const parent = toggle.parentElement;
+                    const dropdownMenu = parent.querySelector('.dropdown-menu');
+                    
+                    // Close all other dropdown menus
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                        if (menu !== dropdownMenu) {
+                            menu.style.display = 'none';
+                        }
+                    });
+                    
+                    // Toggle current dropdown menu
+                    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+        // Slider functionality
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        // Function to show a specific slide
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Remove active class from all dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Set current slide index
+            currentSlide = (n + totalSlides) % totalSlides;
+            
+            // Show the current slide
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        // Event for next button
+        nextBtn.addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+        });
+        
+        // Event for previous button
+        prevBtn.addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+        });
+        
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Auto slide
+        let slideInterval = setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000);
+        
+        // Pause auto slide on hover
+        const slider = document.querySelector('.slider');
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        slider.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 5000);
         });
     </script>
 </body>

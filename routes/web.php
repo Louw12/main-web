@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Akademik\AkademikController;
 use App\Http\Controllers\Akademik\MapelController;
 use App\Http\Controllers\Akademik\GuruController;
-
+use App\Http\Controllers\MainpageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +21,8 @@ use App\Http\Controllers\Akademik\GuruController;
 Route::get('/', function () {
     return view('landing');
 });
+Route::get('/bk',[MainpageController::class, 'bkpage'])->name('bkpage');
+
 
 Auth::routes();
 

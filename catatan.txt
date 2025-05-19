@@ -1,0 +1,2 @@
+-->Plugin terinstall
+    composer require barryvdh/laravel-dompdf

@@ -259,7 +259,7 @@
             </div>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('admin.dashboard') }}">
+                    <a class="nav-link active" href="#">
                         <i class="bi bi-house-door"></i>
                         <span class="sidebar-text">Dashboard</span>
                     </a>
@@ -278,14 +278,14 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="bi bi-person-badge"></i>
-                        <span class="sidebar-text">Roles</span>
+                       <i class="bi bi-file-earmark-text"></i>
+                        <span class="sidebar-text">Banner</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-files"></i>
-                        <span class="sidebar-text">Reports</span>
+                    <a class="nav-link" href="{{ url('admin/berita') }}">
+                        <i class="bi bi-newspaper"></i>
+                        <span class="sidebar-text">Berita</span>
                     </a>
                 </li>
             </ul>

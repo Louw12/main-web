@@ -548,8 +548,28 @@
     </style>
 </head>
 <body>
-    <div class="scrum">
+    <div class="scrum" style="background: #0a2550; color: #fff; padding: 8px 0; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 0;">
+        <div class="scrum-text" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; max-width: 1400px; width: 90%; margin: 0 auto;">
+            <div class="date" id="datetime" style="font-size: 1rem; font-weight: 400; letter-spacing: 1px; text-align: left;">
+                <!-- Tanggal dan jam akan tampil di sini -->
+            </div>
+            <h4 style="font-size: 1.05rem; font-weight: 500; margin: 0; text-align: right; color: #fff; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">
+                <i class="fa-solid fa-hand-wave" style="color: #ffd700; margin-right: 8px;"></i>
+                <span style="color: #ffd700; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">MAN 2 Kota Kediri</span>
+            </h4>
+        </div>
     </div>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateStr = now.toLocaleDateString('id-ID', options);
+            const timeStr = now.toLocaleTimeString('id-ID');
+            document.getElementById('datetime').textContent = `${dateStr} ${timeStr}`;
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
     <nav class="navbar">
         <div class="animated-bg">
             <div class="animated-shape shape1"></div>

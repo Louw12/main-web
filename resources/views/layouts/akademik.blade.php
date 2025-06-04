@@ -158,12 +158,12 @@
                             </a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{route('kelas.index')}}">
                                 <i class="bi bi-book"></i> Classes
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{route('akademik.studen.index')}}">
                                 <i class="bi bi-person-lines-fill"></i> Students
                             </a>
                         </li>

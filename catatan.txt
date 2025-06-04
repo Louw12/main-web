@@ -1,2 +1,10 @@
 -->Plugin terinstall
     composer require barryvdh/laravel-dompdf
+--> Input Jurnal kelas
+    1.Input Hari dan tanggal
+    2.Input kelas (berdasarkan Kelas yang dibuat pada db admin)
+    3.Input Mapel (berdasarkan mapel yang di buat,di dalam ada kode guru dan kode mapel)(jam mapel di buat di db admin pada)
+    4.input siswa tidak masuk (berdasarkan data siswa yang ada di dalam data kelas padadb admin/akademik)
+    5.Keterangan
+    6.Foto ( suasana pembelajaran)
+    7.chaphta
